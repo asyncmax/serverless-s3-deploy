@@ -96,7 +96,7 @@ class Assets {
               ACL: assets.acl || 'public-read',
               Body: body,
               Bucket: bucket,
-              Key: path.join(prefix, filename),
+              Key: path.join(prefix, filename).replace(/\\/g, '/'),
               ContentType: type
             }, opt.headers || {});
 
